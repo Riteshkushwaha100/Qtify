@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 function Button() {
      return(
         <>
-        <button class={styles.button} >Give Feedback</button>
+        <button className={styles.button} >Give Feedback</button>
         </>
      )
 }
