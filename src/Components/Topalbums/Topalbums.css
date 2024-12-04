@@ -1,0 +1,28 @@
+.topaAlbums {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffff;
+  padding-left: 4%;
+}
+
+.showAll {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: right;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #34c94b;
+  padding-right: 4%;
+  cursor: pointer;
+}
+
+.gridOuterTag {
+   justify-content: center;
+}

@@ -28,6 +28,7 @@ import Stack from "@mui/material/Stack";
           height: "205px",
           borderRadius: "10px",
           backgroundColor: "#FFFFFF",
+         
         }}
       >
         <CardMedia
@@ -52,7 +53,6 @@ import Stack from "@mui/material/Stack";
       <Card
         sx={{
           width: "159px",
-          height: "205px",
           borderRadius: "10px",
           backgroundColor: "#121212",
         }}
