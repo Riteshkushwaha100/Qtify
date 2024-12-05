@@ -71,7 +71,7 @@ function Newalbs() {
           displayedData && displayedData.length > 0 ? (
             displayedData.map((album, index) => (
               <Grid item key={index} xs={12}>
-                <ImgMediaCard props={album} />
+                <ImgMediaCard  checkSong={false} props={album} />
               </Grid>
             ))
           ) : (
@@ -91,7 +91,7 @@ function Newalbs() {
             {data && data.length > 0 ? (
               data.map((album, index) => (
                 <SwiperSlide key={index}>
-                  <ImgMediaCard props={album} />
+                  <ImgMediaCard  checkSong={false} props={album} />
                 </SwiperSlide>
               ))
             ) : (

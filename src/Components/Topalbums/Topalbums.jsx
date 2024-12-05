@@ -51,7 +51,7 @@ function TopAlbums() {
     }
     getData();
   }, []); // Empty dependency array ensures it only runs on mount
-
+  console.log(data);
   return (
     <Box sx={{ flexGrow: 2 }}>
       <Grid className="gridOuterTag" container spacing={2}>
@@ -66,7 +66,7 @@ function TopAlbums() {
           displayedData && displayedData.length > 0 ? (
             displayedData.map((album, index) => (
               <Grid item key={index} xs={12}>
-                <ImgMediaCard props={album} />
+                <ImgMediaCard checkSong={false} props={album} />
               </Grid>
             ))
           ) : (
@@ -86,7 +86,7 @@ function TopAlbums() {
             {data && data.length > 0 ? (
               data.map((album, index) => (
                 <SwiperSlide key={index}>
-                  <ImgMediaCard props={album} />
+                  <ImgMediaCard checkSong={false} props={album} />
                 </SwiperSlide>
               ))
             ) : (

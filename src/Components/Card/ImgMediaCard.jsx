@@ -8,11 +8,8 @@ import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 
- function ImgMediaCard({props}) {
-  const handleClick = () => {
-    console.info("You clicked the Chip.");
-  };
-
+ function ImgMediaCard({checkSong , props}) {
+  console.log(checkSong);
   if(!props) {
    return(<>
     <div>no data found</div>
@@ -28,7 +25,7 @@ import Stack from "@mui/material/Stack";
           height: "230px",
           borderRadius: "10px",
           backgroundColor: "#FFFFFF",
-         
+          cursor:"pointer"
         }}
       >
         <CardMedia
@@ -42,9 +39,8 @@ import Stack from "@mui/material/Stack";
         >
           <Stack direction="row" spacing={1}>
             <Chip
-              sx={{ backgroundColor: "#121212", color: "#FFFFFF" }}
-              label={props.follows +" Follows"}
-              onClick={handleClick}
+              sx={{ backgroundColor: "#121212", color: "#FFFFFF" ,cursor:"pointer" }}
+              label={checkSong ? props.likes : props.follows +" Follows"}
             />
           </Stack>
         </CardContent>
@@ -72,7 +68,7 @@ import Stack from "@mui/material/Stack";
             paddingLeft:'5px'
           }}
         >
-         {props.title}
+         { props.title}
         </Typography>
       </Card>
     </>

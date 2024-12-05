@@ -1,0 +1,15 @@
+.tabs {
+    color: white, !important;
+}
+
+.Songs {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #ffffff;
+    padding-left: 4%;
+}
