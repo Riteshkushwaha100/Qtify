@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import Grid from "@mui/material/Grid2";
 import Song from "./Songs.css";
+import { CircularProgress } from '@mui/material';
 
 // Import Swiper styles
 import "swiper/css";
@@ -47,7 +48,6 @@ function Songs() {
           const response = await axios.get("https://qtify-backend-labs.crio.do/songs");
           console.log("Full Response:", response);
           console.log("Response Data:", response.data); // Check the structure of response.data
-          console.log("Response Data Data:", response.data?.data); 
           const filteredSongs =await response.data.filter((song) => song.genre.key === selectedTab);
           console.log(filteredSongs);
           setSongs(filteredSongs);
@@ -105,9 +105,7 @@ function Songs() {
             </SwiperSlide>
           ))
         ) : (
-          <SwiperSlide>
-            <p>No data found</p>
-          </SwiperSlide>
+          <CircularProgress/>
         )}
       </Swiper>
 
