@@ -26,3 +26,11 @@
 .gridOuterTag {
    justify-content: center;
 }
+
+.swiper-scrollbar-drag {
+  background: #34c94b!important;
+}
+
+.swiper{
+  height: 300px;
+}

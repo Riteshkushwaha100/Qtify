@@ -2,8 +2,9 @@
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import Hero from "./Components/Hero/Hero";
-import ImgMediaCard from './Components/Card/ImgMediaCard';
+//import ImgMediaCard from './Components/Card/ImgMediaCard';
 import Topalbums from './Components/Topalbums/Topalbums';
+import Newalbs from './Components/Newalbs/Newalbs';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Navbar />
         <Hero />
         <Topalbums />
-        <ImgMediaCard />
+        <Newalbs />
     </div>  
   );
 }

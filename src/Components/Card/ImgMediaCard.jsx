@@ -25,7 +25,7 @@ import Stack from "@mui/material/Stack";
       <Card
         sx={{
           width: "159px",
-          height: "205px",
+          height: "230px",
           borderRadius: "10px",
           backgroundColor: "#FFFFFF",
          
@@ -34,7 +34,7 @@ import Stack from "@mui/material/Stack";
         <CardMedia
           component="img"
           alt="green iguana"
-          height="140"
+          height="170"
           image={props.image}
         />
         <CardContent

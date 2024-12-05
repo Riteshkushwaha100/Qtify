@@ -5,7 +5,8 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid2";
 import ImgMediaCard from "../Card/ImgMediaCard";
 import axios from "axios";
-import Topalbums from "./Topalbums.css";
+import Newalb from "./Newalbs.css";
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
@@ -27,7 +28,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 async function fetchTopAlbums() {
-  const url = "https://qtify-backend-labs.crio.do/albums/top";
+  const url = "https://qtify-backend-labs.crio.do/albums/new";
 
   try {
     const response = await axios.get(url);
@@ -38,7 +39,7 @@ async function fetchTopAlbums() {
   }
 }
 
-function TopAlbums() {
+function Newalbs() {
   const [data, setData] = useState([]);
   const [showAll, setShowAll] = useState(false); // State to toggle "show all"
   const displayedData = showAll ? data : data.slice(0, 7);
@@ -53,15 +54,19 @@ function TopAlbums() {
   }, []); // Empty dependency array ensures it only runs on mount
 
   return (
-    <Box sx={{ flexGrow: 2 }}>
+    <Box className="newAlbs" sx={{ flexGrow: 2 }}>
       <Grid className="gridOuterTag" container spacing={2}>
         {/* First two items */}
         <Grid item size={{ xs: 6, md: 6 }}>
-          <div className="topaAlbums">Top Albums</div>
+          <div className="newaAlbums">New Albums</div>
         </Grid>
         <Grid item size={{ xs: 6, md: 6 }}>
-          <div className="showAll"  onClick={() => setShowAll(!showAll)}  > {showAll ? 'Collapse' : 'Show All'}</div>
+          <div className="showAll" onClick={() => setShowAll(!showAll)}>
+            {" "}
+            {showAll ? "Collapse" : "Show All"}
+          </div>
         </Grid>
+
         {showAll ? (
           displayedData && displayedData.length > 0 ? (
             displayedData.map((album, index) => (
@@ -97,10 +102,76 @@ function TopAlbums() {
           </Swiper>
         )}
 
+        {/* {showAll ? (
+          displayedData && displayedData.length > 0 ? (
+            displayedData.map((album, index) => (
+              <Grid item key={index} xs={12}>
+                {console.log("album", album)}
+                <ImgMediaCard props={album} />
+              </Grid>
+            ))
+          ) : (
+            <Grid item xs={12}>
+              <p>No data found</p>
+            </Grid>
+          )
+        ) : (
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]} // Enable required modules
+            spaceBetween={10}
+            slidesPerView={7}
+            navigation
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+          >
+            {displayedData && displayedData.length > 0 ? (
+              displayedData.map((album, index) => (
+                <SwiperSlide key={index}>
+                  {console.log("album", album)}
+                  <ImgMediaCard props={album} /> 
+                </SwiperSlide>
+              ))
+            ) : (
+              <SwiperSlide>
+                <Grid item xs={12}>
+                  <p>No data found</p>{" "}
+                
+                </Grid>
+              </SwiperSlide>
+            )}
+          </Swiper>
+        )} */}
+
+        {/* <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]} // Enable required modules
+          spaceBetween={10}
+          slidesPerView={7}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+        >
+          {displayedData && displayedData.length > 0 ? (
+            displayedData.map((album, index) => (
+              <SwiperSlide key={index}>
+                <Grid item xs={12}>
+                  {console.log("album", album)}
+                  <ImgMediaCard props={album} />
+                </Grid>
+              </SwiperSlide>
+            ))
+          ) : (
+            <SwiperSlide>
+              <Grid item xs={12}>
+                <p>No data found</p>{" "}
+              </Grid>
+            </SwiperSlide>
+          )}
+        </Swiper> */}
+
         {/* Dynamic items taking full width */}
         {/* {displayedData && displayedData.length > 0 ? (
           displayedData.map((album, index) => (
-            <Grid  item key={index} xs={12}>
+            <Grid item key={index} xs={12}>
               {console.log("album", album)}
               <ImgMediaCard props={album} />
             </Grid>
@@ -115,4 +186,4 @@ function TopAlbums() {
   );
 }
 
-export default TopAlbums;
+export default Newalbs;
